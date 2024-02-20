@@ -4,12 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-5</title>
+    <link rel="stylesheet" href="/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .font-raleway{
+            font-family: 'Raleway', sans-serif;
+        }
+        .font-inter{
+          font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header></header>
-    <main></main>
+<body class="font-raleway ">
+    <header>
+        <!---------- Nav secion --------->
+        <nav>
+            <div class="navbar bg-base-100 w-[1060px] m-auto">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </div>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                      <li><a>Item 1</a></li>
+                      <li>
+                        <a>Parent</a>
+                        <ul class="p-2">
+                          <li><a>Submenu 1</a></li>
+                          <li><a>Submenu 2</a></li>
+                        </ul>
+                      </li>
+                      <li><a>Item 3</a></li>
+                    </ul>
+                  </div>
+                  <a class="btn btn-ghost text-xl font-extrabold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destinatiion</a></li>
+                    <li><a>Search</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn text-[#1DD100]">Bus <img src="/images/bus-icon.png" alt=""></a>
+                  
+                </div>
+              </div>
+        </nav>
+        <!------ Banner section ------>
+        <div>
+          <div class="text-center bg-[url('/images/banner.png')] bg-no-repeat h-[550px] bg-contain bg-center">
+            <h1 class="text-5xl text-white font-extrabold pt-24">End-to-End Travel with <br> <span class="text-[#1DD100]">P Paribahan</span></h1>
+            <p class="text-white mt-4 mb-8">Yes, you can run unit tests and view the results directly within the app.<br> The integrated testing features allow for a streamlined .</p>
+            <button class="btn bg-[#1DD100] px-6">Buy Tickets</button>
+          </div>
+          <div class="w-[768px] flex gap-3 mx-auto -mt-16 ">
+            <div class="bg-white rounded-2xl flex gap-1 p-8 border-b-4 border-b-[#1DD100]">
+              <div><img src="images/people.png" alt=""></div>
+              <div>
+                <h2 class="text-2xl font-inter font-sans font-bold">500K+</h2>
+                <p class="text-[#03071299]">Registered users</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl flex gap-1 p-8 border-b-4 border-b-[#1DD100]">
+              <div><img src="images/ticket-cupon.png" alt=""></div>
+              <div>
+                <h2 class="text-2xl font-inter font-sans font-bold">1.7 lacks</h2>
+                <p class="text-[#03071299]">Tickets sold</p>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl flex gap-1 p-8 border-b-4 border-b-[#1DD100]">
+              <div><img src="images/stoppage.png" alt=""></div>
+              <div>
+                <h2 class="text-2xl font-inter font-sans font-bold">80K+</h2>
+                <p class="text-[#03071299]">Rental partners</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <!-- main section -->
+    <main>
+        <section>
+            <div class="w-[1060px] mx-auto my-16 ">
+                <div class="text-center">
+                    <h2 class="text-4xl font-sans font-bold">Best offers for you</h2>
+                </div>
+                <div class="flex">
+                    <div>
+                      <div>
+                        <h2>15% OFF</h2>
+                        <p>on your next purchase</p>
+                        <p>use by January 2024</p>
+                      </div>
+                      <div></div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer></footer>
     <script src="script/sctipt.js"></script>
 </body>
