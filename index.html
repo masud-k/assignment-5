@@ -11,6 +11,7 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c130a915fd.js" crossorigin="anonymous"></script>
   </head>
   <body class="font-raleway">
     <header>
@@ -206,7 +207,13 @@
                   <p>Fri, 12 Jan 2024</p>
                 </div>
                 <hr />
-                <div class="flex justify-between">
+                <div class="flex justify-around my-4">
+                  <p class="bg-slate-300 p-2 rounded-md">
+                    Boarding point-Naogaon
+                  </p>
+                  <p class="bg-slate-300 p-2 rounded-md">
+                    Boarding point-Naogaon
+                  </p>
                   <p class="bg-slate-300 p-2 rounded-md">
                     Boarding point-Naogaon
                   </p>
@@ -231,11 +238,11 @@
         <div class="bg-[#F7F8F8] flex flex-col w-[1200px] mx-auto my-16 p-8 rounded-3xl border border-t-[#1DD100] rounded-t-3xl"
         >
           <div class="flex justify-around gap-2">
-            <div class="w-[800px]">
-              <h2>Select Your Seats</h2>
-              <div class="divider divider-dashed"></div>
-              <div class="grid grid-cols-6 gap-4 mt-8">
-                <div class="flex items-center mt-4">
+            <div class="w-[800px] mr-3">
+              <h2 class="text-xl font-medium">Select Your Seats</h2>
+              <hr class="divide-dashed">
+              <div class="flex justify-between">
+                <div class="flex items-center">
                   <img src="images/seat-gray.png" alt="">
                   <span class="ml-2">Available</span>
                 </div>
@@ -244,13 +251,15 @@
                   <span class="ml-2">Selected</span>
                 </div>
               </div>
+              <div class="flex justify-end"><i class="fa-solid fa-gear"></i></div>
             </div>
             <div>
               <img src="images/Line 1.png" alt="">
             </div>
             <div class="w-[400px]">
               <!-- Your Seat details -->
-              <h2 class="bg-red-400">Your Seat Details</h2>
+              <h2 class="text-xl text-center font-raleway font-semibold">Your Seat Details</h2>
+              <hr class="divide-dashed">
             </div>
           </div>
         </div>
