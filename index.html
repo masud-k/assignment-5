@@ -85,7 +85,9 @@
             app.<br />
             The integrated testing features allow for a streamlined .
           </p>
-          <button id="buy-ticket" class="btn bg-[#1DD100] px-6">Buy Tickets</button>
+          <button id="buy-ticket" class="btn bg-[#1DD100] px-6">
+            Buy Tickets
+          </button>
         </div>
         <div class="w-[768px] flex gap-3 mx-auto -mt-16">
           <div
@@ -237,7 +239,7 @@
 
       <!-- Ticket Selectig Area -->
 
-      <section>
+      <section id="seat-selection" class="seat-plan ">
         <div
           class="bg-[#F7F8F8] flex flex-col w-[1200px] mx-auto my-16 p-8 rounded-3xl border border-t-[#1DD100] rounded-t-3xl"
         >
@@ -409,7 +411,6 @@
               <h2 class="text-xl ml-2 font-raleway font-semibold mb-3">
                 Your Seat Details
               </h2>
-              <hr class="divider-dashed" />
               <div class="bg-white p-6 rounded-2xl mt-4">
                 <div class="flex justify-between mx-2 font-semibold mt-2">
                   <p>Seat</p>
@@ -418,19 +419,14 @@
                 </div>
                 <hr class="divider-dashed mt-4" />
                 <div class="flex justify-between mx-2 mt-2">
-                  <p>C2</p>
-                  <p>AC Business</p>
-                  <p>1000 Taka</p>
+                  
                 </div>
                 <div class="flex justify-between mx-2 mt-2">
-                  <p>C4</p>
-                  <p>Ac Business</p>
-                  <p>1000 Taka</p>
+                  
                 </div>
-                <hr class="divider-dashed mt-4" />
                 <div class="flex justify-between mt-2 font-semibold">
                   <h2>Total Fare</h2>
-                  <h2>1000 Taka</h2>
+                  <h2>0</h2>
                 </div>
                 <div class="join">
                   <label for="">
@@ -444,7 +440,7 @@
                 </div>
                 <div class="flex justify-between mt-6 font-bold text-xl">
                   <p>Grand Total</p>
-                  <p>2000 Taka</p>
+                  <p>0</p>
                 </div>
               </div>
               <div>
@@ -475,8 +471,12 @@
                 <button class="btn bg-[#1DD100] w-full">Proceed to Pay</button>
               </div>
               <div class="flex justify-between mt-3">
-                <p><u><a href="">Terms and Conditions</a></u></p>
-                <p><u><a href="">Privacy Policy</a></u></p>
+                <p>
+                  <u><a href="">Terms and Conditions</a></u>
+                </p>
+                <p>
+                  <u><a href="">Privacy Policy</a></u>
+                </p>
               </div>
             </div>
           </div>
@@ -485,5 +485,6 @@
     </main>
     <footer></footer>
     <script src="script/sctipt.js"></script>
+     <!-- <script src="script/function.js"></script> -->
   </body>
 </html>
