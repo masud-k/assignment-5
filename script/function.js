@@ -14,12 +14,18 @@ const grandTotalElement = seatDetails.querySelector(
   ".flex.justify-between.mt-6 p:last-child"
 );
 const couponInput = seatDetails.querySelector("input[type='text']");
-const applyBtn = seatDetails.querySelector("button");
+const applyBtn = document.querySelector("button[id='apply-btn']");
+const proceedBtn = document.querySelector("button[id='proceed-btn']");
+console.log(proceedBtn);
 
 for (let i = 0; i < ticketSelection.length; i++) {
   const seat = ticketSelection[i];
   seat.addEventListener("click", function () {
     const seatNumber = seat.innerText.trim();
+    if (selectedSeats.length >= 4 && !selectedSeats.includes(seatNumber)) {
+      alert("You can select a maximum of 4 seats.");
+      return;
+    }
     if (selectedSeats.includes(seatNumber)) {
       selectedSeats.splice(selectedSeats.indexOf(seatNumber), 1);
       seat.classList.remove("bg-green-400");
@@ -33,7 +39,6 @@ for (let i = 0; i < ticketSelection.length; i++) {
           row.remove();
         }
       }
-      updateFare();
     } else {
       // Select seat
       selectedSeats.push(seatNumber);
@@ -50,6 +55,7 @@ for (let i = 0; i < ticketSelection.length; i++) {
       );
     }
     updateFare();
+    toggleApplyButton();
   });
 }
 
@@ -72,3 +78,18 @@ function updateFare() {
   totalFareElement.innerText = `${totalFare} Taka`;
   grandTotalElement.innerText = `${totalFare - discount} Taka`;
 }
+function toggleApplyButton() {
+  applyBtn.disabled = selectedSeats.length < 4;
+  if (applyBtn.disabled) {
+    applyBtn.classList.add("btn-disabled");
+  } else {
+    applyBtn.classList.remove("btn-disabled");
+  }
+}
+proceedBtn.addEventListener("click", function () {
+  if (selectedSeats.length === 0) {
+    alert("Please select at least one seat before proceeding.");
+  } else {
+    alert(`✅ Payment Successful!\nYou booked ${selectedSeats.length} seat(s): ${selectedSeats.join(", ")}`);
+  }
+});
