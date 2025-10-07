@@ -16,7 +16,12 @@ const grandTotalElement = seatDetails.querySelector(
 const couponInput = seatDetails.querySelector("input[type='text']");
 const applyBtn = document.querySelector("button[id='apply-btn']");
 const proceedBtn = document.querySelector("button[id='proceed-btn']");
-console.log(proceedBtn);
+const inputMobile = document.querySelector(
+  "input[placeholder='Mobile Number']"
+);
+const availableSeatText = document.getElementById("available-seats");
+const currentSeats = availableSeatText.innerText;
+console.log(currentSeats);
 
 for (let i = 0; i < ticketSelection.length; i++) {
   const seat = ticketSelection[i];
@@ -45,7 +50,6 @@ for (let i = 0; i < ticketSelection.length; i++) {
       this.classList.remove("bg-slate-300");
       this.classList.add("bg-green-400");
 
-
       const newRow = document.createElement("div");
       newRow.className = "flex justify-between mx-2 mt-2";
       newRow.innerHTML = `<p>${seatNumber}</p><p>AC Business</p><p>500 Taka</p>`;
@@ -53,6 +57,12 @@ for (let i = 0; i < ticketSelection.length; i++) {
         newRow,
         seatDetails.querySelector("hr.divider-dashed.mt-4")
       );
+      const remainingSeats = currentSeats - selectedSeats.length;
+      availableSeatText.innerText = remainingSeats;
+      console.log(remainingSeats);
+      if (remainingSeats === 0) {
+        availableSeatText.innerText = "No seats available";
+      }
     }
     updateFare();
     toggleApplyButton();
@@ -60,18 +70,19 @@ for (let i = 0; i < ticketSelection.length; i++) {
 }
 
 applyBtn.addEventListener("click", function () {
-  const couponCode = couponInput.value.trim()
+  const couponCode = couponInput.value.trim();
   const totalFare = selectedSeats.length * fare;
   discount = 0;
   if (couponCode === "NEW15") {
     discount = totalFare * 0.15;
-  }else if (couponCode === "COUPLE20") {
-    discount = totalFare * 0.20;
-  }else {
+  } else if (couponCode === "COUPLE20") {
+    discount = totalFare * 0.2;
+  } else {
     alert("Invalid Coupon Code");
     return;
   }
   updateFare();
+  couponInput.value = "";
 });
 function updateFare() {
   const totalFare = selectedSeats.length * fare;
@@ -89,7 +100,15 @@ function toggleApplyButton() {
 proceedBtn.addEventListener("click", function () {
   if (selectedSeats.length === 0) {
     alert("Please select at least one seat before proceeding.");
+  } else if (inputMobile.value.trim() === "") {
+    alert("Please enter your mobile number.");
   } else {
-    alert(`✅ Payment Successful!\nYou booked ${selectedSeats.length} seat(s): ${selectedSeats.join(", ")}`);
+    alert(
+      `✅ Payment Successful!\nYou booked ${
+        selectedSeats.length
+      } seat(s): ${selectedSeats.join(", ")}`
+    );
   }
 });
+
+function updateAvailableSeats() {}

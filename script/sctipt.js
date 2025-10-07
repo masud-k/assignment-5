@@ -1,10 +1,10 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const buyBtn = document.getElementById("buy-ticket");
   const seatDetails = document.querySelector(".bg-white.p-6"); // Seat details div
   const totalFareElement = seatDetails.querySelector("h2:nth-of-type(1) + h2");
-  const grandTotalElement = seatDetails.querySelector(".flex.justify-between.mt-6 p:last-child");
+  const grandTotalElement = seatDetails.querySelector(
+    ".flex.justify-between.mt-6 p:last-child"
+  );
   const couponInput = seatDetails.querySelector("input[type='text']");
   const applyBtn = seatDetails.querySelector("button");
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ✅ Buy Ticket এ ক্লিক করলে সিট সেকশনে স্ক্রল করবে
   buyBtn.addEventListener("click", function () {
     document.querySelector("section:nth-of-type(3)").scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 
@@ -29,18 +29,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // যদি সিট আগে সিলেক্ট করা থাকে → আবার ক্লিক করলে Unselect হবে
       if (selectedSeats.includes(seatNumber)) {
-        selectedSeats = selectedSeats.filter(s => s !== seatNumber);
+        selectedSeats = selectedSeats.filter((s) => s !== seatNumber);
         this.classList.remove("bg-green-400");
         this.classList.add("bg-slate-300");
 
         // ✅ Seat Details থেকে রিমুভ করো
-        const rows = seatDetails.querySelectorAll(".flex.justify-between.mx-2.mt-2");
-        rows.forEach(row => {
+        const rows = seatDetails.querySelectorAll(
+          ".flex.justify-between.mx-2.mt-2"
+        );
+        rows.forEach((row) => {
           if (row.querySelector("p").innerText === seatNumber) {
             row.remove();
           }
         });
-
       } else {
         // ✅ নতুন সিট সিলেক্ট
         selectedSeats.push(seatNumber);
@@ -51,7 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const newRow = document.createElement("div");
         newRow.className = "flex justify-between mx-2 mt-2";
         newRow.innerHTML = `<p>${seatNumber}</p><p>AC Business</p><p>${seatPrice} Taka</p>`;
-        seatDetails.insertBefore(newRow, seatDetails.querySelector("hr.divider-dashed.mt-4"));
+        seatDetails.insertBefore(
+          newRow,
+          seatDetails.querySelector("hr.divider-dashed.mt-4")
+        );
       }
 
       // ✅ Total Fare & Grand Total আপডেট
@@ -82,8 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateFare() {
     let totalFare = selectedSeats.length * seatPrice;
     totalFareElement.innerText = totalFare + " Taka";
-    grandTotalElement.innerText = (totalFare - discount) + " Taka";
+    grandTotalElement.innerText = totalFare - discount + " Taka";
   }
 });
-
-

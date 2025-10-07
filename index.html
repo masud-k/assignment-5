@@ -198,7 +198,7 @@
                   class="flex items-center gap-2 bg-[#1DD10020] p-2 rounded-2xl"
                 >
                   <img src="images/seat-green.png" alt="" />
-                  <p class="text-[#1DD100]">40 <span>seats Available</span></p>
+                  <p id="available-seats" class="text-[#1DD100]">40</p>
                 </div>
               </div>
               <div class="bg-base-200 p-4 rounded-2xl mt-4 w-[668px]">
@@ -239,7 +239,7 @@
 
       <!-- Ticket Selectig Area -->
 
-      <section id="seat-selection" class="seat-plan ">
+      <section id="seat-selection" class="seat-plan">
         <div
           class="bg-[#F7F8F8] flex flex-col w-[1200px] mx-auto my-16 p-8 rounded-3xl border border-t-[#1DD100] rounded-t-3xl"
         >
@@ -418,9 +418,7 @@
                   <p>Price</p>
                 </div>
                 <hr class="divider-dashed mt-4" />
-                <div class="flex justify-between mx-2 mt-2">
-                  
-                </div>
+                <div class="flex justify-between mx-2 mt-2"></div>
                 <div class="flex justify-between mt-2 font-semibold">
                   <h2>Total Fare</h2>
                   <h2 id="total-fare">0</h2>
@@ -433,7 +431,12 @@
                       class="input input-bordered w-full mt-4"
                     />
                   </label>
-                  <button id="apply-btn" class="btn join-item bg-[#1DD100] mt-4">Apply</button>
+                  <button
+                    id="apply-btn"
+                    class="btn join-item bg-[#1DD100] mt-4"
+                  >
+                    Apply
+                  </button>
                 </div>
                 <div class="flex justify-between mt-6 font-bold text-xl">
                   <p id="">Grand Total</p>
@@ -451,7 +454,7 @@
               <div>
                 <h2>Passenger Mobile:</h2>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Mobile Number"
                   class="input input-bordered w-full mt-2"
                 />
@@ -465,7 +468,9 @@
                 />
               </div>
               <div class="text-center mt-6">
-                <button id='proceed-btn' class="btn bg-[#1DD100] w-full">Proceed to Pay</button>
+                <button id="proceed-btn" class="btn bg-[#1DD100] w-full">
+                  Proceed to Pay
+                </button>
               </div>
               <div class="flex justify-between mt-3">
                 <p>
@@ -482,7 +487,7 @@
     </main>
     <footer></footer>
     <!-- <script src="script/sctipt.js"></script> -->
-     <script src="script/function.js"></script>
-     <!-- <script src="script/gptfunction.js"></script> -->
+    <script src="script/function.js"></script>
+    <!-- <script src="script/gptfunction.js"></script> -->
   </body>
 </html>
